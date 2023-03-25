@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploration!</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="logo">ADVENTURE</h1>
+        <ul class="nav-links">
+            <li class="active" ><a href="#"></a>Home</li>
+            <li><a href="#"></a>Tours</li>
+            <li><a href="#"></a>Explore</li>   
+            <li><a href="#"></a>About</li>          
+            <li class="ctn"><a href="#"></a>Contact</li>            
+        </ul>
+        <img src="../static/menu-btn.png" alt="" class="menu-btn">
+    </nav>
+    <header>
+        <div class="header-content">
+            <h2>Don't just dream of a vacation. Just do it!</h2>
+            <div class="line"></div>
+            <h1>A Wonderful Gift</h1>
+            <a href="#" class="ctn">Learn More</a>
+        </div>
+        <div class="chat-bar-collapsible">
+            <button id="chat-button" type="buttton" class="collapsible">
+                Chat With Us!
+            </button>
+            
+            <div class="content">
+                <div class="full-chat-block">
+                    <div class="outer-container">
+                        <div class="chat-container">
+                            <div id="chatbox">
+                                <h5 id="chat-timestamp"></h5>
+                                <p id="botStarterMessage" class="botText">
+                                    <span>Loading...</span>
+                                </p>
+                            </div>
+                            
+                            <div class="chat-bar-input-block">
+                                <div id="userInput">
+                                    <input
+                                    type="text"
+                                    id="textInput"
+                                    class="input-box"
+                                    type="text"
+                                    name="msg"
+                                    placeholder="Tap 'Enter' to send a Message"
+                                    />
+                                    <p></p>
+                                </div>
+                                
+                                <div class="chat-bar-icons">
+                                    <i
+                                    id="chat-icon"
+                                    style="color: grey"
+                                    class="fa-solid fa-thumbs-up"
+                                    onclick="heartButton()"
+                                    ></i>
+                                    <i
+                                    id="chat-icon"
+                                    style="color: grey"
+                                    class="fa fa-paper-plane"
+                                    onclick="getResponse()"
+                                    ></i>
+                                </div>
+                            </div>
+                            
+                            <div id="chat-bar-bottom"></div>
+                        </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="../static/chat.js"></script>
+        <script>
+            function getResponse() {
+            let userText = $("#textInput").val();
+            let userHtml = '<p class="userText"><span>' + userText + "</span></p>";
+          
+            $("#textInput").val("");
+            $("#chatbox").append(userHtml);
+            document.getElementById("chat-bar-bottom").scrollIntoView(true);
+            $.get("/get", {
+              msg: userText
+            }).done(function(data) {
+              var botHtml = '<p class = "botText"><span>' + data +'</span></p>';
+              $("#chatbox").append(botHtml);
+              document.getElementById('userInput').scrollIntoView(true);
+            });
+          }
+        </script>
+    </header>
+    
+    <section class="events">
+        <div class="title">
+            <h1>Upcoming Events</h1>
+            <div class="line"></div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src="../static/hotel1.jpg" alt="">
+                <h4>Hotels</h4>
+                <p>We don't do conventional. We do fun. Super cool & comfortable rooms filled with stuff that will make you smile. Spaces for work & play. Food & drink to shout about.</p>
+                <a href="#" class="ctn">Learn More</a>
+            </div>
+            <div class="col">
+                <img src="../static/tours.jpg" alt="">
+                <h4>Tourist Spot</h4>
+                <p>A vast world awaits you for being explored. Quit your comfort zone, step out of that door. Work can wait, Travel now.</p>
+                <a href="#" class="ctn">Learn More</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="explore">
+        <div class="explore-content">
+            <h1>Explore The World</h1>
+            <div class="line"></div>
+            <p>Travel makes one modest. You see what a small place you occupy in the world</p> 
+            <a href="#" class="ctn">Learn More</a>
+        </div>
+    </section>
+
+    <section class="footer">
+        <p></p>
+    </section>
+    <script>
+        const menuBtn = document.querySelector('.menu-btn')
+        const navlinks = document.querySelector('.nav-links')
+
+        menuBtn.addEventListener('click', ()=>{
+            navlinks.classList.toggle('mobile-menu')
+        })
+
+    </script>
+</body>
+</html>

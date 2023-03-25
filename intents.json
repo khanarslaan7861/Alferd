@@ -1,0 +1,108 @@
+{"intents":
+  [
+    {"tag": "greetings",
+      "patterns": ["hi", "wassup", "aloha", "hey", "how are you", "hello", "is any one there", "good day", "greetings"],
+      "responses": ["Hey", "Hello", "Hi there","Hello there", "Hey, how can i help", "Hi, let me know what you need"]
+    },
+    {"tag": "goodbye",
+      "patterns": ["bye","by","see you later", "goodbye", "see ya", "farewell", "cya", "i am leaving", "ciao"],
+      "responses": ["See you later", "Thanks for visiting", "Have a nice day", "Hope you will visit again"]
+    },
+    {"tag": "age",
+      "patterns": ["how old are you", "how old are your developers", "how old are your makers", "how old are you", "age?"],
+      "responses": ["Let me put it this way, I was made by 4 developers from mumbai with a combined age of 80"]
+    },
+    {"tag": "name",
+      "patterns": ["what is your name?", "what do I call you?", "what should I call you", "whats your name", "who are you", "can you tell me your name", "what can i call you", "how do I address you"],
+      "responses": ["My name is Alferd", "My creators call me Alferd", "My names Alferd but you can call me Alfie too"]
+    },
+    {"tag": "intendedtasks",
+      "patterns": ["what can you do?","show me what can you do","ok Alfred what can you do","ok Alfie what can you do"],
+      "responses": ["I can suggest Restaurants and Places to visit.please choose one"]
+    },
+    {"tag": "Restaurants",
+      "patterns": ["i am hungry ","i want to eat","show me Restaurants","are there any good restaurants nearby","suggest restaurants","suggest some food","Restaurant"],
+      "responses": ["sure what do you wish to eat? Chinese,Mughalai,Italian."]
+    },
+    {"tag": "Places",
+      "patterns": ["suggest some places","show me some good places","places","beautiful places","i want to go out","i am bored","lets go on an adventure","adventure"],
+      "responses": ["i see you  also have the wanderer lust. choose the city where you want to travel 'Nerul','Seawoods','Belapur','Panvel'"]
+    },
+    {"tag": "Chinese",
+      "patterns": ["i want to eat chinese","i like to eat chinese","Chinese","chinese please","chinese would be good","i prefer chinese","show chinese restaurants"],
+      "responses": ["there are various cities you can choose from. Type the digit for choosing the city, Nerul:1,Seawoods:2,Belapur:3,Panvel:4"]
+    },
+    {"tag":"Mughalai",
+    "patterns":["i want to eat mughalai","mughalai","mughalai please","i like to eat mughalai","mughalai would be good","i prefer mughalai","show mughalai restaurants","can i get mughalai food"],
+    "responses":["these are various cities you can choose from.Type the charater  to choose the city.Nerul:A,Seawoods:B,Belapur:C,Panvel:D"]
+    },
+    {"tag":"Italian",
+    "patterns":["i want to eat italian","italian","italian please","i like to eat italian","italian","italian would be good","i prefer italian","show italian restaurants","can i get italian food"],
+    "responses":["these are nearest cities which have Italian restaurants.Type the number to choose the city.Nerul:10,Seawoods:11,Belapur:12,Panvel:13"]
+    },
+    {"tag": "Nerul:1:chinese",
+    "patterns": ["1","one"],
+    "responses": ["Great here are some good restaurants in Nerul:1) MAMMAS KITCHEN(Nerul E):9883838383,2)lIMRA WASEEM(Nerul E):97373737377,3)Burp and Run:9234532167"]
+    },
+    {"tag": "Seawoods:2:chinese",
+    "patterns": ["2","two"],
+    "responses": ["Great here are some good restaurants in Seawoods: 1)LAKESIDE CHINESE CORNER:09702611811,2)Crunchy Adda:09702611818,3)Chinese.IN:08657141450"]
+    },
+    {"tag": " Belapur:3:chinese",
+    "patterns": ["3","three"],
+    "responses": ["Great here are some good restaurants in Belapur:1)YUMMIES KITCHEN:09819549403,2)Round House Chinese:09076029558,3)91 GReat wall:902939678"]
+    },
+    {"tag": " Panvel:4:chinese",
+    "patterns": ["4","four"],
+    "responses": ["Great here are some good restaurants in Panvel:1)KUNAL CHINESE & FAST FOOD:09323862252,2)Hotel china gate:09819998873,3)The chinese Bistro:08600109919"]
+    },
+    {"tag": "Nerul:A:Mughalai",
+    "patterns": ["a","A"],
+    "responses": ["Great Mughalai food is always pleasing here are some restaurants in Nerul:1)Patiala Street:2443526890,2)Punjabi Twist:07738266896,3)Royal Punjab:02227701118"]
+    },
+    {"tag": "Seawoods:B:Mughalai",
+    "patterns": ["b","B"],
+    "responses": ["Great Mughalai food is always pleasing here are some restaurants in Seawoods:1)Northern Tadka:02239686302,2)Copper chimney:08657896811,3)Sadda punjab:"]
+    },
+    {"tag": "Belapur:C:Mughalai",
+    "patterns": ["c","C"],
+    "responses": ["Great Mughalai food is always pleasing here are some restaurants in Belapur:1)SAFFRON MULTICUISINE:09156321353,2)SPOON N FORK:09136321353,3)WEST 1 THE PARK:02267589000"]
+    },
+    {"tag": "Panvel:D:Mughalai",
+    "patterns": ["d","D"],
+    "responses": ["Great Mughalai food is always pleasing here are some restaurants in Panvel:1)HIMALAYA PUNJAB:02143221375,2)BOLLYFOOD DHABA:07304210222,3)NEW PUNJAB HOTEL:02227451382"]
+    },
+    {"tag": "Nerul:10:Italian",
+    "patterns": ["10","ten"],
+    "responses": ["Italian food known for its  artistic nature these are  some restaurants in Nerul:1)THE BCK:09613296296,2)The Stoned aged cafe:09867590090,3)Lapinos pizza:09979964737"]
+    },
+    {"tag": "Seawoods:11:Italian",
+    "patterns":["11","eleven"],
+    "responses":["Great choice these are some restaurants which serve Italian food:1)UNA CAFE:08879887285,2)CALIFORNIA PIZZA KITCHEN:08879867295,3)SAUCIER RESTAURANT:18879067595"]
+    },
+    {"tag":"Belapur:12:Italian",
+    "patterns":["12","twelve"],
+    "responses":["Great choice these are some restaurants which serve Italian food:1)SWORDS CAFE:08879501111,2)TAMASHA RESTO & BAR:09987660044,3)SAMMY SOSA:02227568181" ]
+    },
+    {"tag":"Panvel:13:Italian",
+    "patterns":["13","thirteen"],
+    "responses": ["Great choice these are some restaurants which serve Italian food:1)The social bistro &cafe:09220757325,2)siciliano the fusion restro:09594282828,3)porta via:06304058419"]
+    },
+    {"tag": "Nerul",
+    "patterns": ["i want to go Nerul","lets go nerul","lets vsit nerul","show nerul","show places in nerul"],
+    "responses": ["it's a beautiful city these are some places: 1) <a href='https://goo.gl/maps/KdNPeTdZ9Dv6cPhSA'>Rock garden.(NERUL)</a> 2)<a href='https://goo.gl/maps/aHu7fimALaMaQTqi9'>Jewel of Navi mumbai</a> 3)<a href='https://goo.gl/maps/dEm3FCmUf65NUT3r6'>RR Patil Garder</a>"]
+    },
+    {"tag":"Seawoods",
+    "patterns": ["i want to go Seawoods","lets go seawoods","lets visit seawoods","show seawoods","show places in seawoods"],
+    "responses":["Seawoods another gem in Navimumbai these aare some places:1)<a href='https://goo.gl/maps/Lza8aXDcGKbcSx8J6'>Seawoods Flamingo Point</a> 2)<a href='https://g.page/SeawoodsGrandCentralMall?share'>Nexus Seawoods</a> 3)<a href='https://goo.gl/maps/YioT1fwwwSAwVHCj6'>Chanakya View Point</a>"]
+    },
+    {"tag":"Belapur",
+    "patterns": ["i want to go Belapur","lets go belapur","lets visit belapur","show belapur","show places in belapur"],
+    "responses":["Interesting choice these are some places in belapur:1)<a href='https://goo.gl/maps/d9egzU1hKeAjqzK47'>Belapur Waterfalls</a> 2)<a href='https://goo.gl/maps/LED2z1CscAzSUQ5D8'>Bird wacthing Area</a> 3)<a href='https://goo.gl/maps/a8p3nnKX9dFbuBpA6'>Belapur Fort</a>"]
+    },
+    {"tag":"Panvel",
+    "patterns":["i want to go Panvel","lets go panvel","lets visit Panvel","show Panvel","show places in Panvel"],
+    "responses":["A beautiful city which has Natural as well as Urban Habitat these are some places in Panvel:1)<a href='https://goo.gl/maps/2PmuS6iveR6LPHV48'>Smart Eco Park Panvel</a> 2)<a href='https://goo.gl/maps/s9nvXFB1zAedKdnm9'>Kalavantin Durg</a> 3)<a href='https://goo.gl/maps/WLfaWPHKzPtngG7D6'>Karnala Bird Sanctuary</a>"]
+    }
+  ]
+}
