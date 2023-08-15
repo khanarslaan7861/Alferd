@@ -1,11 +1,13 @@
-import random, json, pickle, nltk
+import json
+import nltk
+import pickle
+import random
+
 import numpy as np
 from nltk.stem import WordNetLemmatizer
-
+from tensorflow.python.keras.layers import Dense, Dropout
 from tensorflow.python.keras.models import Sequential
-from tensorflow.python.keras.layers import Dense, Activation, Dropout
 from tensorflow.python.keras.optimizers import gradient_descent_v2
-
 
 lemmatizer = WordNetLemmatizer()
 
@@ -44,21 +46,28 @@ for document in documents:
     training.append([bag, output_row])
 
 random.shuffle(training)
-training = np.array(training)
+training = np.array(training, dtype=object)
 train_x = list(training[:, 0])
 train_y = list(training[:, 1])
 
 model = Sequential()
-model.add(Dense(1024, input_shape=(len(train_x[0]),), activation='relu'))
+model.add(Dense(2048, input_shape=(len(train_x[0]),), activation='relu'))
 model.add(Dropout(0.5))
-model.add(Dense(512, activation='relu'))
+model.add(Dense(1024, activation='relu'))
 model.add(Dropout(0.5))
 model.add(Dense(len(train_y[0]), activation='softmax'))
 
 sgd = gradient_descent_v2.SGD(learning_rate=0.01, decay=1e-6, momentum=0.9, nesterov=True)
 
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
-hist = model.fit(np.array(train_x), np.array(train_y), epochs=400, batch_size=5, verbose=1)
+hist = model.fit(np.array(train_x), np.array(train_y), epochs=1000, batch_size=5, verbose=1)
+## Error Caused @
+##      site-packages\tensorflow\python\keras\engine\data_adapter.py", line 1699, in _is_distributed_dataset
+## Change suggested @ site-packages\tensorflow\python\keras\engine\data_adapter.py", line 1699, in _is_distributed_dataset
+##      def _is_distributed_dataset(ds):
+##       return isinstance(ds, input_lib.DistributedDatasetInterface)
+##      return isinstance(ds, input_lib.DistributedDatasetSpec)
+
 model.save('alferd_model.model.h5', hist)
 
 print("Done")

@@ -66,6 +66,7 @@ def home():
 @app.route("/get")
 def get_bot_response():
     userText = request.args.get('msg')
+    userText = userText.lower()
     ints = predict_class(userText)
     res = get_responses(ints, intents)
     return str(res)
