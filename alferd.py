@@ -1,3 +1,5 @@
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
 import json
 import pickle
 import random
@@ -73,4 +75,4 @@ def get_bot_response():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0")
+    app.run()
